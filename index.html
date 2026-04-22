@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>to-do=list</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 <div class="hero">
         <h1 class="hero-text">TODO</h1>
+        <button class="toggle-theme">
+            <img src="assets/mode.png" alt="toggle theme">
+        </button>
 <div class="input-box">
     <input type="text" class="todo-input" placeholder="Create a new todo..">
     <button class="send-img">
     <img src="assets/send-icon.png" alt="send">
     </button>
 </div>
-<div>
-    <input type="text" name="" id="">
 </div>
-</div>
+
 <div class="todo-list"></div>
-<script src="script.js"></script>
+
+<div class="todo-footer">
+    <span class="items-left">0 items left</span>
+    <div class="filter">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="active">Active</button>
+            <button data-filter="completed">Completed</button>
+    </div>
+    <button class="clear-completed">Clear Completed</button>
+
+</div>
+<script src="script/script.js"></script>
 </body>
 </html>
