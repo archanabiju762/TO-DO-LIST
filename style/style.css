@@ -1,0 +1,221 @@
+:root{
+    --bg: #0b0b0b;
+    --card: #3d3c53;
+    --text: #ffffff;
+    --border: #444;
+}
+body.light {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --text: #111111;
+    --border: #ddd;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    /* display: grid; */
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.hero {
+    background-image: url('../assets/todo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    width: 100%;
+    position: relative;
+}
+
+.toggle-theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.toggle-theme img {
+    width: 30px;
+    height: 30px;
+}
+
+.hero-text {
+    color: var(--text);
+    font-size: 2rem;
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.todo-input {
+    width: 100%;
+    padding: 12px 45px 12px 12px; 
+    border: none;
+    border-radius: 1px;
+    outline: none;
+    font-size: 1rem;
+    background: var(--card);
+    color: var(--text);
+}
+
+.send-img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.send-img img {
+    width: 20px;
+    height: 20px;
+}
+
+.task {
+    background: var(--card);
+    padding: 12px;
+    border-radius: 1px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+      border-bottom: 1px solid var(--border);
+}
+
+.circle 
+{
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgb(145, 142, 142);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.circle.completed {
+    /* background-color: rgb(241, 237, 237); */
+    background: url('../assets/check.jpg') center/cover no-repeat;
+        mix-blend-mode: multiply;
+
+    border: 2px solid var(--border);  
+}
+.circle.complete::after
+{
+    /* content: url(assets/check.jpg); */
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    transform: rotate(45deg);
+    top: 2px;
+    left: 4px;
+}
+.task.status {
+    text-decoration: line-through;
+    color: #808080
+}
+
+.todo-footer {
+
+    background: var(--card);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-box {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.input-box,
+.todo-list,
+.todo-footer {
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.filter
+{
+    display: flex;
+    gap: 15px;
+}
+.todo-footer button {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1rem;
+}
+.todo-footer button.active {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.todo-footer button:hover {
+    color: var(--text);
+}
+.clear-completed {
+    color: var(--text);
+}
+@media (max-width: 768px) {
+    .hero{
+        height: 25vh;
+    }
+    .hero-text {
+font-size: 2rem;
+padding: 20px;
+    }
+    .input-box {
+        width: 90%;
+        bottom: -20px;
+    }
+    .todo-list {
+        width: 90%;
+        margin-top: 40px;
+    }
+    .task{
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+        .todo-input {
+        font-size: 0.9rem;
+        padding: 10px 40px 10px 10px;
+    }
+    .todo-footer {
+        width: 90%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+     .filter {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .send-img img {
+        width: 18px;
+        height: 18px;
+    }
+    
+}
